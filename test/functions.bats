@@ -31,7 +31,7 @@ teardown() {
 }
 
 @test "Build Passed" {
-    source="<span class=\"label label-info\">BUILD</span> $repository<a href=\"http://example.com/build/1\">#1</a> $branch: <span class=\"label label-success\">PASSED</span><br />TAKAHASHI Kazunari: commit message here"
+    source="<span class=\"label label-info\">BUILD</span> <span class=\"label label-success\">PASSED</span> $repository<a href=\"http://example.com/build/1\">#1</a> $branch<br />TAKAHASHI Kazunari: commit message here"
 
     WERCKER_IDOBATA_NOTIFY_TOKEN=token \
     WERCKER_BUILD_URL="http://example.com/build/1" \
@@ -45,7 +45,7 @@ teardown() {
 }
 
 @test "Deploy passed" {
-    source="<span class=\"label label-info\">DEPLOY</span> $repository<a href=\"http://example.com/deploy/1\">#1</a> $branch to sandbox: <span class=\"label label-success\">PASSED</span><br />TAKAHASHI Kazunari: commit message here"
+    source="<span class=\"label label-info\">DEPLOY</span> <span class=\"label label-success\">PASSED</span> $repository<a href=\"http://example.com/deploy/1\">#1</a> $branch to sandbox<br />TAKAHASHI Kazunari: commit message here"
 
     WERCKER_IDOBATA_NOTIFY_TOKEN=token \
     WERCKER_DEPLOY_URL="http://example.com/deploy/1" \
@@ -61,7 +61,7 @@ teardown() {
 }
 
 @test "Build failure" {
-    source="<span class=\"label label-info\">BUILD</span> $repository<a href=\"http://example.com/build/1\">#1</a> $branch: <span class=\"label label-danger\">FAILD</span><br />TAKAHASHI Kazunari: commit message here"
+    source="<span class=\"label label-info\">BUILD</span> <span class=\"label label-danger\">FAILD</span> $repository<a href=\"http://example.com/build/1\">#1</a> $branch<br />TAKAHASHI Kazunari: commit message here"
 
     WERCKER_IDOBATA_NOTIFY_TOKEN=token \
     WERCKER_BUILD_URL="http://example.com/build/1" \
@@ -75,7 +75,7 @@ teardown() {
 }
 
 @test "Deploy failure" {
-    source="<span class=\"label label-info\">DEPLOY</span> $repository<a href=\"http://example.com/deploy/1\">#1</a> $branch to sandbox: <span class=\"label label-danger\">FAILD</span><br />TAKAHASHI Kazunari: commit message here"
+    source="<span class=\"label label-info\">DEPLOY</span> <span class=\"label label-danger\">FAILD</span> $repository<a href=\"http://example.com/deploy/1\">#1</a> $branch to sandbox<br />TAKAHASHI Kazunari: commit message here"
 
     WERCKER_IDOBATA_NOTIFY_TOKEN=token \
     WERCKER_DEPLOY_URL="http://example.com/deploy/1" \
