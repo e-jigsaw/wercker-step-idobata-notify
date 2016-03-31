@@ -49,8 +49,8 @@ deploy_target() {
 
 message() {
     if [ "$CI" = "true" ]; then
-        echo "Build $(repository)$(job_id) ($(branch) - $(commit)): $(build_result)<br />$(git_log)"
+        echo "<span class=\"label label-info\">BUILD</span> $(repository)$(job_id) ($(branch) - $(commit)): $(build_result)<br />$(git_log)"
     elif [ "$DEPLOY" = "true" ]; then
-        echo "Deploy $(repository)$(job_id) ($(branch) - $(commit)) to $(deploy_target): $(build_result)<br />$(git_log)"
+        echo "<span class=\"label label-info\">DEPLOY</span> $(repository)$(job_id) ($(branch) - $(commit)) to $(deploy_target): $(build_result)<br />$(git_log)"
     fi
 }
