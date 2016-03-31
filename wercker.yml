@@ -1,15 +1,4 @@
 box: ubuntu
-build:
-  steps:
-    - script:
-        name: install bsts
-        code: |
-          sudo add-apt-repository ppa:duggan/bats --yes
-          sudo apt-get update -qq
-          sudo apt-get install -qq bats
-    - script:
-        name: test
-        code: bats test
 deploy:
   steps:
     - script:
