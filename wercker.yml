@@ -11,14 +11,8 @@ build:
     - script:
         name: test
         code: bats test
-  after-steps:
-    - jgs/idobata-notify@0.0.1:
-        token: $IDOBATA_TOKEN
 deploy:
   steps:
     - script:
         name: deploy
         code: echo "Deploy to $WERCKER_DEPLOYTARGET_NAME"
-  after-steps:
-    - jgs/idobata-notify@0.0.1:
-        token: $IDOBATA_TOKEN
