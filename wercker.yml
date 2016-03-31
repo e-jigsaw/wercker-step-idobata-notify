@@ -1,4 +1,4 @@
-box: wercker/default
+box: ubuntu
 build:
   steps:
     - wercker/validate-wercker-step@0.0.3
@@ -12,7 +12,7 @@ build:
         name: test
         code: bats test
   after-steps:
-    - 1syo/idobata-notify@0.2.3:
+    - jgs/idobata-notify@0.0.1:
         token: $IDOBATA_TOKEN
 deploy:
   steps:
@@ -20,5 +20,5 @@ deploy:
         name: deploy
         code: echo "Deploy to $WERCKER_DEPLOYTARGET_NAME"
   after-steps:
-    - 1syo/idobata-notify@0.2.2:
+    - jgs/idobata-notify@0.0.1:
         token: $IDOBATA_TOKEN
