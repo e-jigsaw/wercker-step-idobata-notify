@@ -1,4 +1,9 @@
 box: ubuntu
+build:
+  steps:
+    - script:
+        name: done
+        code: echo "Done"
 deploy:
   steps:
     - script:
