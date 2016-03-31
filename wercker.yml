@@ -1,7 +1,6 @@
 box: ubuntu
 build:
   steps:
-    - wercker/validate-wercker-step@0.0.3
     - script:
         name: install bsts
         code: |
