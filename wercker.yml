@@ -3,7 +3,7 @@ build:
   steps:
     - wercker/validate-wercker-step@0.0.3
     - script:
-        name: install bsts
+        name: install bats
         code: |
           sudo add-apt-repository ppa:duggan/bats --yes
           sudo apt-get update -qq
