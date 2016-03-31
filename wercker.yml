@@ -1,9 +1,16 @@
-box: ubuntu
+box: wercker/default
 build:
   steps:
+    - wercker/validate-wercker-step@0.0.3
     - script:
-        name: done
-        code: echo "Done"
+        name: install bsts
+        code: |
+          sudo add-apt-repository ppa:duggan/bats --yes
+          sudo apt-get update -qq
+          sudo apt-get install -qq bats
+    - script:
+        name: test
+        code: bats test
 deploy:
   steps:
     - script:
